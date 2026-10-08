@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/IdeaLib-master.iml" filepath="$PROJECT_DIR$/.idea/IdeaLib-master.iml" />
+        <module fileurl="file://$PROJECT_DIR$/your-local-module.iml" filepath="$PROJECT_DIR$/your-local-module.iml" />
+        <module fileurl="file://$PROJECT_DIR$/remote-module.iml" filepath="$PROJECT_DIR$/remote-module.iml" />
     </modules>
   </component>
 </project>

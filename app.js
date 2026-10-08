@@ -119,31 +119,31 @@ function submitAuth(e, type) {
         }
         state.user = {
             name: f.get("username").trim(),
-            email: f.get("email"),
+            email: f.get("email").trim(),
             password: f.get("password"),
             plan: "Free",
         };
         localStorage.setItem("idealibUser", JSON.stringify(state.user));
         showToast("Your IdeaLib account is ready.");
     } else {
-        let identity = f.get("identity").trim().toLowerCase(),
-            saved = state.user;
+        let identity = f.get("identity").trim().toLowerCase();
+        let saved = JSON.parse(localStorage.getItem("idealibUser") || "null");
         if (
             !saved ||
-            ![saved.name.toLowerCase(), saved.email.toLowerCase()].includes(
-                identity,
-            ) ||
+            ![saved.name.toLowerCase(), saved.email.toLowerCase()].includes(identity) ||
             saved.password !== f.get("password")
         ) {
             document.querySelector("#auth-error").textContent =
                 "We couldn’t match those details. Create an account or check your username and password.";
             return;
         }
-        showToast(`Welcome back, ${saved.name}!`);
+        state.user = saved;
+        showToast("Welcome back, " + saved.name + "!");
     }
     state.screen = "overview";
     render();
 }
+
 function go(screen) {
     state.screen = screen;
     render();
@@ -527,13 +527,21 @@ function searchItems(q) {
             );
     }
 }
-function logout() {
+/* function logout() {
     state.user = null;
     localStorage.removeItem("idealibUser");
     state.screen = "landing";
     render();
     showToast("You’re logged out.");
+} */
+
+function logout() {
+    state.user = null;
+    state.screen = "landing";
+    render();
+    showToast("You’re logged out.");
 }
+
 const fullNotes = [
     `The plasma membrane is a selectively permeable boundary built primarily from a phospholipid bilayer. Hydrophilic phosphate heads face aqueous environments; hydrophobic fatty-acid tails point inward and create a barrier to most ions and large polar molecules.\n\nPASSIVE TRANSPORT requires no direct ATP input and moves substances down concentration or electrochemical gradients. Simple diffusion moves small nonpolar molecules through the bilayer. Facilitated diffusion uses channels or carriers for ions and polar solutes. Osmosis is net water movement across a selectively permeable membrane.\n\nACTIVE TRANSPORT moves substances against a gradient and requires energy. The sodium-potassium pump uses ATP to move 3 Na⁺ out and 2 K⁺ into an animal cell per cycle. Cotransport can use the energy stored in an ion gradient to move another substance. Endocytosis brings material into a cell in vesicles; exocytosis releases vesicle contents outside.\n\nEXAM CHECK: predict net water movement by comparing solute concentrations; distinguish channel-mediated facilitated diffusion from ATP-driven pumping; explain why membrane proteins determine selective permeability.`,
     `MITOSIS distributes duplicated chromosomes into two genetically similar daughter nuclei. Before mitosis, DNA is replicated during S phase; each chromosome consists of sister chromatids joined at a centromere.\n\nPROPHASE: chromatin condenses and the spindle forms. PROMETAPHASE: the nuclear envelope breaks down and spindle microtubules attach to kinetochores. METAPHASE: chromosomes align at the metaphase plate. ANAPHASE: sister chromatids separate and move to opposite poles. TELOPHASE: chromosomes decondense and nuclear envelopes reform. CYTOKINESIS divides the cytoplasm; a cleavage furrow forms in animal cells and a cell plate in plant cells.\n\nG1, G2, and spindle checkpoints reduce the chance of division with damaged DNA, incomplete replication, or improperly attached chromosomes. Mitosis is nuclear division; cytokinesis is cytoplasmic division.`,

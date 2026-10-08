@@ -89,7 +89,7 @@ function esc(s = "") {
     );
 }
 function brand() {
-    return `<a class="brand" href="#" onclick="go('landing');return false"><span class="brandmark">i</span>IdeaLib</a>`;
+    return `<a class="brand" href="#" onclick="go('landing');return false"><span class="brandmark"></span>IdeaLib</a>`;
 }
 function render() {
     if (state.screen === "landing") renderLanding();

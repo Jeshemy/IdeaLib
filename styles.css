@@ -315,8 +315,101 @@ button{
 }
 
 
-/* auth */
-.auth-view{min-height:100vh;background:var(--paper);padding:26px 5vw}.auth-brand{margin-bottom:22px}.auth-card{max-width:1000px;min-height:590px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;background:white;border:1px solid #eee5eb;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.auth-art{position:relative;background:linear-gradient(145deg,#5d3d5dce,#916d91bd),url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=80') center/cover;display:flex;flex-direction:column;justify-content:space-between;padding:36px;color:white}.auth-art h2{font:700 31px 'Playfair Display';margin:0}.auth-art p{font:italic 27px/1.45 'Playfair Display';max-width:350px}.auth-art .brand{color:white}.auth-form{padding:58px clamp(28px,5vw,66px);display:flex;flex-direction:column;justify-content:center}.auth-form h1{font:700 34px 'Playfair Display';color:var(--purple);margin:7px 0}.auth-form>p{color:var(--muted);margin:0 0 27px}.field{display:flex;flex-direction:column;gap:7px;margin:0 0 16px}.field label{font-size:12px;font-weight:700;color:#665d68}.field input{padding:14px 15px;border:1px solid #e7dfe7;border-radius:11px;background:#fffcf9;outline:0}.field input:focus{border-color:#a784a9;box-shadow:0 0 0 3px #e9d9ec}.auth-switch{text-align:center;margin-top:23px;color:var(--muted);font-size:13px}.linkbutton{border:0;background:none;color:var(--purple);font-weight:700;text-decoration:underline;padding:3px}.auth-error{color:#a43e5c;font-size:12px;margin:0 0 10px}
+.auth-view{
+    min-height:100vh;
+    background:var(--paper);
+    padding:26px 5vw
+}
+.auth-brand{
+    margin-bottom:22px
+}
+.auth-card{
+    max-width:1000px;
+    min-height:590px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:white;
+    border:1px solid #eee5eb;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:var(--shadow)
+}
+.auth-art{
+    position:relative;
+    background:linear-gradient(145deg,#5d3d5dce,#916d91bd),url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=80') center/cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:36px;
+    color:white
+}
+.auth-art h2{
+    font:700 31px 'Playfair Display';
+    margin:0
+}
+.auth-art p{
+    font:italic 27px/1.45 'Playfair Display';
+    max-width:350px
+}
+.auth-art .brand{
+    color:white
+}
+.auth-form{
+    padding:58px clamp(28px,5vw,66px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center
+}
+.auth-form h1{
+    font:700 34px 'Playfair Display';
+    color:var(--purple);margin:7px 0
+}
+.auth-form>p{
+    color:var(--muted);
+    margin:0 0 27px
+}
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;margin:0 0 16px
+}
+.field label{
+    font-size:12px;
+    font-weight:700;
+    color:#665d68
+}
+.field input{
+    padding:14px 15px;
+    border:1px solid #e7dfe7;
+    border-radius:11px;
+    background:#fffcf9;
+    outline:0
+}
+.field input:focus{
+    border-color:#a784a9;
+    box-shadow:0 0 0 3px #e9d9ec
+}
+.auth-switch{
+    text-align:center;
+    margin-top:23px;
+    color:var(--muted);
+    font-size:13px
+}
+.linkbutton{
+    border:0;
+    background:none;
+    color:var(--purple);
+    font-weight:700;
+    text-decoration:underline;
+    padding:3px
+}
+.auth-error{
+    color:#a43e5c;
+    font-size:12px;
+    margin:0 0 10px
+}
+
 
 
 /* app */

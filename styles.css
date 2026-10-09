@@ -205,14 +205,27 @@ button{
     gap:20px;
     text-align:left
 }
+
 .feature-card{
     padding:26px 24px;
     background:var(--white);
     border-radius:18px;
     border:1px solid #f0e6eb;
     box-shadow:0 9px 0 #e9d5e7;
-    min-height:210px
+    min-height:210px;
+    transition:background .25s, transform .25s, box-shadow .25s;
 }
+
+.feature-card:hover{
+    background:var(--lav);
+    transform:translateY(-4px);
+    box-shadow:0 9px 0 #d9bedf;
+}
+.feature-card:hover .feature-icon{
+    background:var(--purple);
+    color:white;
+}
+
 .feature-icon{
     width:43px;
     height:43px;
@@ -299,10 +312,20 @@ button{
     border:1px solid var(--line);
     border-radius:20px;
     padding:28px;
-    box-shadow:var(--shadow)
+    box-shadow:var(--shadow);
+    transition:background .25s, transform .25s, box-shadow .25s;
 }
 .plan.featured{
     background:#e9d9e9
+}
+
+.plan:hover{
+    background:var(--lav);
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px #68456822;
+}
+.plan.featured:hover{
+    background:var(--lav2);
 }
 .price{
     font:700 36px 'Playfair Display';
@@ -347,7 +370,7 @@ button{
 }
 .auth-art{
     position:relative;
-    background:linear-gradient(145deg,#5d3d5dce,#916d91bd),url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=80') center/cover;
+    background:linear-gradient(145deg,#5d3d5dce,#916d91bd),url("https://media.base44.com/images/public/6ab91f77d962fa872421c75e/a117d5c7a_generated_image.png") center/cover no-repeat;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
